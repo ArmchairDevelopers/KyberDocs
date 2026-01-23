@@ -1,0 +1,92 @@
+---
+title: Troubleshooting
+description: Troubleshooting common issues with KYBER.
+---
+
+import {Accordion, Accordions} from 'fumadocs-ui/components/accordion';
+
+
+<Accordions type="single">
+    <Accordion title="I have changed my EA nickname, but it is not updating in KYBER" id="name-change">
+        EA nickname changes are not reflected immediately in KYBER. It can take **up to 7 days** for your updated EA nickname to appear in KYBER
+
+        ### What to do if it does not update
+
+        If your nickname has still not updated after 7 days, contact KYBER support **via <a href="https://discord.gg/kyber">Discord</a>**.
+    </Accordion>
+    <Accordion title="The game always launches without mods, how can I fix this?" id="no-mods">
+
+        This issue does not have a single confirmed cause.
+
+        ### Possible fix
+
+        Some users were able to resolve this issue by excluding KYBER from their antivirus software.
+
+        See:
+        <a href="#antivirus-exclusion">How can I exclude KYBER from my antivirus?</a>
+    </Accordion>
+    <Accordion title="The launcher is invisible/blank when I open it" id="launcher-invisible">
+        ### How to fix
+
+        1. Close the KYBER Launcher completely
+        2. Delete the following file:
+            - `C:\Users\%USERNAME%\AppData\Roaming\ArmchairDevelopers\Launcher\data.hive`
+        3. Start the KYBER Launcher again
+
+        ### Important notes
+        - This will **reset all launcher settings**
+        - **Mod collections are not affected**
+        - You will need to reconfigure launcher preferences after restarting
+    </Accordion>
+    <Accordion title="I experience frequent game crashes, what can I do?" id="game-crashes">
+        Game crashes are usually caused by conflicting settings or incompatible mods. Check the following points carefully.
+
+        ### Common causes and fixes
+
+        **Incompatible or outdated mods**
+        - Remove all mods and start the game to verify it launches correctly
+        - Re-add mods one by one to identify the problematic mod
+
+        **DirectX 12 or fullscreen mode**
+        - Disable **DirectX 12** in the game settings
+        - Try to change from **exclusive fullscreen** to borderless or windowed mode instead
+
+        **NVIDIA Photo Mode / Ansel**
+        - Try to disable NVIDIA Photo Mode (Ansel). It is known to cause instability and crashes when used with KYBER.
+        - Open NVIDIA GeForce Experience, go to Settings → Features, and turn off the **Game filters and Photo mode** option.
+
+        ### Important notes
+
+        - Always restart the game after changing settings
+        - If crashes persist, test with a completely clean mod setup
+        - Ensure your graphics drivers are up to date
+    </Accordion>
+    <Accordion title="How can I exclude KYBER from my antivirus?" id="antivirus-exclusion">
+        To prevent antivirus software from interfering with KYBER, you must add exclusions for the following directories. Failing to do this commonly causes the launcher to malfunction, updates to fail, or the game to start without mods.
+
+        ### Required exclusions
+
+        Add **all** of these paths to your antivirus exclusion / whitelist:
+
+        - `C:\Users\%USERNAME%\AppData\Roaming\ArmchairDevelopers`
+        - `C:\Program Files (x86)\KYBER Launcher` <br/>
+        *(or your custom installation directory if you installed the launcher elsewhere)*
+
+        ### Why this is necessary
+
+        KYBER is commonly detected by antivirus software because it:
+
+        - is **not code-signed**
+        - **injects the KYBER DLL into the game process**
+        - modifies process memory at runtime
+
+        ### Important notes
+
+        - Exclude the **entire folders**, not individual files
+        - Restart your antivirus **and** the KYBER Launcher after adding exclusions
+        - If issues persist, temporarily disable real-time protection to verify the antivirus is the cause
+
+        If you are using Windows Defender, this setting can be found under:<br/>
+        **Windows Security → Virus & threat protection → Manage settings → Exclusions**
+    </Accordion>
+</Accordions>

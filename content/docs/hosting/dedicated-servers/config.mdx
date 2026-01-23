@@ -1,0 +1,77 @@
+---
+title: Configuring and run your server
+description: Details on how to configure and run your KYBER server.
+readingTime: true
+weight: 4
+---
+
+Below is an example of how to launch a dedicated KYBER server using the official KYBER Docker image. Be sure to replace all placeholder values (`<…>`) with your actual settings.
+
+```shell
+docker run \
+  -e MAXIMA_CREDENTIALS=<email>:<password> \
+  -e KYBER_TOKEN=<token> \
+  -e KYBER_SERVER_NAME=<server-name> \
+  -e KYBER_MAP_ROTATION=<base64‐encoded‐map‐rotation> \
+  -v "<host-install-path>:/mnt/battlefront" \
+  -it \
+  ghcr.io/armchairdevelopers/kyber-server:latest
+````
+
+<Callout>
+    **Optional:** You can also set `KYBER_SERVER_DESCRIPTION` and mount a mod folder via an extra `-e` and `-v` respectively. See the table below for details.
+</Callout>
+
+---
+
+## Environment variables
+
+| Name                        | Type  &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; | Description                                                                                                                                                      |
+|-----------------------------|-------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| MAXIMA\_CREDENTIALS         | `string:string`                                                                                                   | Your EA login email and password, separated by a colon (username:password). Used by Maxima to validate your game license.                                        |
+| KYBER\_TOKEN                | `string`                                                                                                          | Your KYBER API token (alphanumeric). Obtainable via the KYBER CLI                                                                                                |
+| KYBER\_SERVER\_NAME         | `string`                                                                                                          | The public server name (UTF-8, ≤24 characters) shown in KYBER’s server browser.                                                                                  |
+| KYBER\_SERVER\_DESCRIPTION  | `string`                                                                                                          | (Optional) A longer UTF-8 description (≤256 characters) for server rules or links.                                                                               |
+| KYBER\_SERVER\_MAX\_PLAYERS | `integer (1–64)`                                                                                                  | (Optional) Maximum allowed players. Defaults to the game’s standard limit (40) if not specified.                                                                 |
+| KYBER\_MAP\_ROTATION        | `base64`                                                                                                          | Base64‐encoded JSON array of your map rotation. This can be exported from the KYBER Launcher.                                                                    |
+| KYBER\_MOD\_FOLDER          | `string`                                                                                                          | (Optional) Path inside container where your kyber mod collection is stored (e.g., `/mnt/battlefront/mods`). Must match a corresponding `-v` mount from the host. |
+
+## Create and export a map rotation
+
+To create a custom map rotation, you can use the KYBER Launcher:
+1. Open the KYBER Launcher and go to the **"Host"** tab.
+2. Click on **"NEW"**.
+3. Add maps to your rotation by selecting them from the list.
+4. Once you have your desired rotation, click on **"Export"** to save it as a base64-encoded string.
+
+---
+
+## Use mods on your server
+
+To use mods on your server, you need to prepare a mod collection in the KYBER Launcher:
+
+1. Open the KYBER Launcher and select your server.
+2. Go to the **Mods** tab.
+3. Click **Create New Collection**, give it a name, and add all desired mods.
+4. Once your collection is ready, click the dropdown next to the "Play" button and choose **Export Collection (tar)**.
+5. Extract the contents of the resulting `.tar` file into your host’s mod folder (the path you mounted via `KYBER_MOD_FOLDER`).
+
+The server container will automatically detect your KYBER collection and load it on startup.
+
+---
+## Manage your server
+
+Once your KYBER server container is running, you can manage it through the KYBER Launcher:
+
+To open the moderation page, go to the **"Host"** tab in the KYBER Launcher. There your server should be listed under the name you specified in the `KYBER_SERVER_NAME` environment variable. If you have multiple servers, they will all be listed here.
+
+- **Update Server Info**: Change the server name or description.
+- **Moderate Players**: Kick or ban players directly from the player list.
+- **Add/Remove Bots**: Configure AI opponents on the fly.
+- **View Logs & Console**: See live server output and enter console commands.
+
+Everything is available in one unified interface—no need to switch between multiple tabs.
+
+<Callout type="warning" title="Warning">All configuration changes made through the KYBER Launcher (name, description, map rotation, bots) are **NOT** persisted in your container’s internal state and will **NOT** survive restarts.</Callout>
+
+

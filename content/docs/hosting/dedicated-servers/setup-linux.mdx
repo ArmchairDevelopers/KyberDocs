@@ -1,0 +1,26 @@
+---
+title: Setting up a server on Linux
+description: Instructions on how to set up a KYBER dedicated server on a Windows machine.
+readingTime: true
+weight: 2
+---
+
+## Install Docker
+
+- **Ubuntu**: [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+- **Debian**: [Install Docker Engine on Debian](https://docs.docker.com/engine/install/debian/)
+- **CentOS**: [Install Docker Engine on CentOS](https://docs.docker.com/engine/install/centos/)
+- **Fedora**: [Install Docker Engine on Fedora](https://docs.docker.com/engine/install/fedora/)
+
+## Install the Game
+
+<Callout type="warning" title="Warning">To download Battlefront 2 using the Kyber CLI, you must have a valid EA account with the game in your library.</Callout>
+
+To download the game, simply run the following command in a terminal:
+
+```bash
+kyber_cli download_game -p <absolute_game_dir> -t <ea_token>
+```
+
+<Callout>**Note:** Once the download reaches 100%, cancel the process. The game files will be ready for use.</Callout>
+

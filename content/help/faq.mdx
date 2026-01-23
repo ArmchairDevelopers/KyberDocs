@@ -1,0 +1,109 @@
+---
+title: Frequently Asked Questions
+description: Common questions (FAQ) and answers about KYBER.
+---
+
+import {Accordion, Accordions} from 'fumadocs-ui/components/accordion';
+
+<Accordions type="single">
+    <Accordion title="What is KYBER?" id="what-is-kyber">
+        KYBER is a unified game launcher for STAR WARS Battlefront II (EA) that adds community-hosted multiplayer with full mod support, a server browser, private games, and more.
+    </Accordion>
+    <Accordion title="How do I install KYBER?" id="installation-guide">
+        
+        # Prerequisites
+        1) Ensure STAR WARS Battlefront II is installed on your PC.
+        2) You must own a legitimate copy of STAR WARS Battlefront II to play KYBER.
+        3) Ensure Discord overlay is disabled for STAR WARS Battlefront II.
+        4) Launch STAR WARS Battlefront II *without* KYBER at least once.
+        5) Create a <a href="https://www.nexusmods.com">Nexus Mods account</a> and log in when asked by KYBER.
+
+        # Installation Guide
+        1) Download the KYBER Installer from our <a href="https://discord.gg/kyber">Discord server</a>.
+        (The installer download is found in the '#download' channel.)
+        2) Extract the Installer from the `.zip` and run it.
+        3) Once installed, run the KYBER Launcher.
+        4) Play fair, be kind, and have fun!
+
+    </Accordion>
+    <Accordion title="Is this an official EA Product?" id="ea">
+        This project is not associated with Electronic Arts Inc. or EA Digital Illusions CE AB. STAR WARS Battlefront is a registered trademarks of Electronic Arts Inc. All
+        company, product, and service names, logos, and brands, and any other copyrighted materials are property of their respective owners and are used for identifying the service only. Use of these materials does not
+        imply endorsement.
+    </Accordion>
+    <Accordion title="What are rules of KYBER?" id="rules">
+        KYBER has a set of community rules that all players must follow when using the platform. You can read the full list of rules
+        <a href="https://kyber.gg/about/tos/">here</a>.
+    </Accordion>
+    <Accordion title="How do I host a server on KYBER?" id="hosting-servers">
+        1) Go to the “Host” tab and click “New”
+        2) Select the “Mods” button next to “Rotation,” and select a mod collection from the list.
+        3) Select “Rotation,” choose a gamemode, and add maps.
+        4) Name the server, set a player limit, and (optionally) set a password.
+        5) Click “Play” to launch the server.
+        Note: Hero Showdown does not work on KYBER. Use the Heroes Versus Villains mode with Mopdhead's IOI 1v1 addons instead.
+
+    </Accordion>
+    <Accordion title="Can I use the KYBER Launcher to play online on EA servers?" id="ea-servers">
+        No, currently the KYBER Launcher only works with KYBER servers. To play on EA servers with cosmetic mods you still need to use Frosty Mod Manager.
+        This is something we intend to look at in the future.
+    </Accordion>
+    <Accordion title="I was banned, where do I appeal?" id="ban-appeal">
+        For Ban Appeals contact us at <a href="mailto:contact@kyber.gg">contact@kyber.gg</a>with the subject heading 'Ban Appeal'.
+        In your email, include the following details alongside your message:
+        <ul>
+            <li>Your EA username</li>
+            <li>Your Discord username</li>
+            <li>The platform you were banned on (Discord/KYBER)</li>
+            <li>**Why you believe the ban was unjustified**</li>
+        </ul>
+    </Accordion>
+    <Accordion title="How do I report a player?" id="report-player">
+        To make a complaint about KYBER user you can contact us by using the in-game reporting system.
+        You can make a report by:
+        <ul>
+            <li>Using the in-game panel via the launcher, or</li>
+            <li>Opening the social page (click on your profile) and searching the player.</li>
+        </ul>
+    </Accordion>
+    <Accordion title="Does it matter what platform I own the game on?" id="platform">
+        No, KYBER works with any version of Battlefront II on PC including Steam and Epic Games.
+    </Accordion>
+    <Accordion title="Do you need to own the game to use KYBER?" id="game-ownership">
+        Yes, Kyber is available to anyone who owns Battlefront II on Origin and cracked copies of the game are automatically blocked.
+    </Accordion>
+    <Accordion title="What data do you collect?" id="data-collection">
+        <ul>
+            <li>Players connect to servers via Ping Sites. All data passing through the Ping Site system is cleaned and any information about the player is stripped.</li>
+            <li>Server admins are not able to view any player data besides their username and userid.</li>
+            <li>To read more about what data we collect read our <a href="https://kyber.gg/about/tos/">privacy policy</a>.</li>
+        </ul>
+    </Accordion>
+    <Accordion title="Can I group up with my friends on KYBER?" id="group-up">
+        No, KYBER does not currently support grouping up with friends. This is a feature we are looking to add in the future.
+    </Accordion>
+    <Accordion title="What ping sites are currently available?" id="ping-sites">
+        Currently there are ping sites in:
+        <ul>
+            <li>Illinois - USA Central</li>
+            <li>Virginia - USA East Coast</li>
+            <li>Germany - Central Europe</li>
+            <li>Australia - Sydney</li>
+        </ul>
+    </Accordion>
+    <Accordion title="How can I report a bug or suggest a feature?" id="features">
+        You can report bugs or suggest features on our <a href="https://feedback.kyber.gg">Feedback Portal</a>.
+    </Accordion>
+    <Accordion title="Is KYBER available on Linux?" id="linux-support">
+        The KYBER Launcher is currently only available on Windows and will not work under Wine. The reason for that is because of [wine networking](https://github.com/tokio-rs/mio/issues/1444) issues in mio, but also
+        because the game's licensing system depends on a strictly calculated hardware hash, and running inside wine messes with our generation of it.
+
+        However, the KYBER CLI is available on Linux and there are plans to bring the Launcher to Linux in the future.
+    </Accordion>
+    <Accordion title="What is Maxima?" id="what-is-maxima">
+        Maxima is our in-development open source third-party replacement for the EA App. You can read more about it [here](https://github.com/ArmchairDevelopers/Maxima).
+    </Accordion>
+    <Accordion title="Is KYBER open source?" id="open-source">
+        Yes. The KYBER Launcher, CLI, Proxy and Module are open source and available on [GitHub](https://github.com/ArmchairDevelopers/Kyber).
+    </Accordion>
+</Accordions>
