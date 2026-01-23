@@ -59,7 +59,7 @@ export function baseOptions(): BaseLayoutProps {
             ),
         },
         links: linkItems,
-        githubUrl: 'https://github.com/ArmchairDevelopers/kyber-docs',
+        githubUrl: 'https://github.com/ArmchairDevelopers/KyberDocs',
         themeSwitch: {
             enabled: false,
         }
