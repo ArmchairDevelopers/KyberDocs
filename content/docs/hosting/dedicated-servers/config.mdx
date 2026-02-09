@@ -38,7 +38,11 @@ docker run \
 | KYBER\_MOD\_FOLDER           | `string`                                                                                                          | (Optional) Path inside container where your kyber mod collection is stored (e.g., `/mnt/battlefront/mods`). Must match a corresponding `-v` mount from the host. |
 | KYBER\_SERVER\_PLUGINS\_PATH | `string`                                                                                                          | (Optional) Path inside container where your kyber plugins are stored (e.g., `/mnt/battlefront/plugins`). Must match a corresponding `-v` mount from the host.    |
 | KYBER\_MODULE\_CHANNEL       | `string`                                                                                                          | (Optional) The release channel for Kyber modules. Options include `stable` or specific versions like (e.g., `ver/beta10`)                                        |
-| KYBER\_LOG\_LEVEL            | `string`                                                                                                          | (Optional) Sets the logging verbosity. Supported values (ordered by severity): `trace`, `debug`, `info`, `warning`, `error`, `fatal`. Defaults to `info`.        |
+| KYBER\_LOG\_LEVEL            | `string`                                                                                                          | (Optional) Sets the logging verbosity. Supported values (ordered by severity): `trace`, `debug`, `info`. Defaults to `info`.                                     |
+
+<Callout type="warning" title="Plugins">
+  KYBER Plugins are still in development and may not work as expected. There is currently no official support or documentation for using plugins. Use at your own risk.
+</Callout>
 
 ## Create and export a map rotation
 
