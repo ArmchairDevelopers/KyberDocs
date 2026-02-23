@@ -36,12 +36,17 @@ docker run \
 | KYBER\_SERVER\_MAX\_PLAYERS  | `integer (1–64)`                                                                                                  | (Optional) Maximum allowed players. Defaults to the game’s standard limit (40) if not specified.                                                                 |
 | KYBER\_MAP\_ROTATION         | `base64`                                                                                                          | Base64‐encoded JSON array of your map rotation. This can be exported from the KYBER Launcher.                                                                    |
 | KYBER\_MOD\_FOLDER           | `string`                                                                                                          | (Optional) Path inside container where your kyber mod collection is stored (e.g., `/mnt/battlefront/mods`). Must match a corresponding `-v` mount from the host. |
-| KYBER\_SERVER\_PLUGINS\_PATH | `string`                                                                                                          | (Optional) Path inside container where your kyber plugins are stored (e.g., `/mnt/battlefront/plugins`). Must match a corresponding `-v` mount from the host.    |
+| KYBER\_SERVER\_PLUGINS\_PATH | `string`                                                                                                          | (Optional) Path inside container where your kyber plugins are stored (e.g., `/mnt/battlefront/plugins`). Files must have .kbplugin extension.                    |
+| KYBER\_DEV\_PLUGIN\_PATH     | `string`                                                                                                          | (Optional) Path inside container to an unpacked plugin or .zip/.kbplugin file. (e.g., `/mnt/battlefront/dev/plugins`). Intended for plugin development.          |
 | KYBER\_MODULE\_CHANNEL       | `string`                                                                                                          | (Optional) The release channel for Kyber modules. Options include `stable` or specific versions like (e.g., `ver/beta10`)                                        |
 | KYBER\_LOG\_LEVEL            | `string`                                                                                                          | (Optional) Sets the logging verbosity. Supported values (ordered by severity): `trace`, `debug`, `info`. Defaults to `info`.                                     |
 
 <Callout type="warning" title="Plugins">
   KYBER Plugins are still in development and may not work as expected. There is currently no official support or documentation for using plugins. Use at your own risk.
+</Callout>
+
+<Callout type="warning" title="MAXIMA_CREDENTIALS Password">
+  Special characters in your EA password may cause authentication to fail. If you experience login issues, update your EA password to contain only uppercase letters, lowercase letters, and numbers.
 </Callout>
 
 ## Create and export a map rotation
