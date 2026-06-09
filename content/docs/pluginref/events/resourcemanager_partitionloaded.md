@@ -1,0 +1,23 @@
+---
+title: ResourceManager:PartitionLoaded
+---
+
+> **ResourceManager:PartitionLoaded**(partitionName: string, instance: [DataContainer](/g/pluginref/types/datacontainer))
+
+ran every time an EBX asset is loaded. Expensive as a result.
+
+
+## Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| **partitionName** | string |  |
+| **instance** | [DataContainer](/g/pluginref/types/datacontainer) |  |
+
+## Example
+
+```lua
+EventManager.Listen("ResourceManager:PartitionLoaded", function(partitionName, instance)
+    -- Do stuff here.
+end)
+```

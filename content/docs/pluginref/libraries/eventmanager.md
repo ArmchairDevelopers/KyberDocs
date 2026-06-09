@@ -1,0 +1,57 @@
+---
+title: EventManager
+---
+
+## Summary
+
+EventManager global table.
+
+### Functions
+
+| Method | Returns |
+| ------ | ------- |
+| **[Listen](#listen)**(event: string, callback: function) | void |
+| **[Listen](#listen-1)**(event: string, inst: any, callback: function) | void |
+| **[SetCancelled](#setcancelled)**(isCancelled: boolean) | void |
+
+## Functions
+
+### Listen
+
+> **Listen**(event: string, callback: function): void
+
+Subscribes a listener to an event.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| **event** | string | The name of the event. |
+| **callback** | function | A callback in the form `function(...)`. |
+
+### Listen
+
+> **Listen**(event: string, inst: any, callback: function): void
+
+Subscribes a listener to an event.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| **event** | string | The name of the event. |
+| **inst** | any | Object that has callback as one of its instanced methods. |
+| **callback** | function | A callback in the form `function(...)`. |
+
+### SetCancelled
+
+> **SetCancelled**(isCancelled: boolean): void
+
+Set current running event cancellation to be queued.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| **isCancelled** | boolean | Set if the event is queued to be cancelled. |
+

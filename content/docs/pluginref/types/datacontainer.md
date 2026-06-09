@@ -1,0 +1,55 @@
+---
+title: DataContainer
+---
+
+## Summary
+
+A generic DataContainer. The fields of this type are dynamic, so you must know what the names of them are to access them! For example, if I had a `AutoPlayerSettings` type, I could access the bots of team 1 by doing:
+```lua
+local oldValue = autoPlayerSettings.forceFillGameplayBotsTeam1
+autoPlayerSettings.forceFillGameplayBotsTeam1 = 10
+```
+
+### Properties
+
+| Name | Type |
+| ---- | ---- |
+| [typeInfo](#typeinfo) | [TypeInfo](/g/pluginref/types/typeinfo) |
+
+### Methods
+
+| Method | Returns |
+| ------ | ------- |
+| **[Is](#is)**(otherTypeName: string) | boolean |
+
+## Properties
+
+---
+
+### typeInfo
+
+> **[TypeInfo](/g/pluginref/types/typeinfo)**
+
+The DataContainer's type
+
+---
+## Methods
+
+### Is
+
+> **Is**(otherTypeName: string): boolean
+
+Check if type is the type name provided.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| otherTypeName | string | The type you want to check against. |
+
+#### Returns
+
+| Type | Description |
+| ---- | ----------- |
+| **boolean** |  |
+

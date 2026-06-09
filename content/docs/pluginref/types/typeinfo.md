@@ -1,0 +1,51 @@
+---
+title: TypeInfo
+---
+
+## Summary
+
+An internal type's description
+
+### Properties
+
+| Name | Type |
+| ---- | ---- |
+| [name](#name) | string |
+
+### Methods
+
+| Method | Returns |
+| ------ | ------- |
+| **[IsKindOf](#iskindof)**(otherTypeName: string) | boolean |
+
+## Properties
+
+---
+
+### name
+
+> **string**
+
+The type's name
+
+---
+## Methods
+
+### IsKindOf
+
+> **IsKindOf**(otherTypeName: string): boolean
+
+Check if type is a subtype or is the type provided.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| otherTypeName | string | The type you want to check against. |
+
+#### Returns
+
+| Type | Description |
+| ---- | ----------- |
+| **boolean** |  |
+

@@ -1,0 +1,24 @@
+---
+title: DedicatedServer:PerformanceStatsMessage
+---
+
+> **DedicatedServer:PerformanceStatsMessage**(tps: number, avgTickTime: number, worstTickTime: number)
+
+sent every 10s that notifies the server of its performance statistics.
+
+
+## Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| **tps** | number |  |
+| **avgTickTime** | number |  |
+| **worstTickTime** | number |  |
+
+## Example
+
+```lua
+EventManager.Listen("DedicatedServer:PerformanceStatsMessage", function(tps, avgTickTime, worstTickTime)
+    -- Do stuff here.
+end)
+```

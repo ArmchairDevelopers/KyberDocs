@@ -1,0 +1,16 @@
+---
+title: Level:Complete
+---
+
+> **Level:Complete**()
+
+when a level is done and before the next one starts loading. Generally good for cleanup from last level.
+
+
+## Example
+
+```lua
+EventManager.Listen("Level:Complete", function()
+    -- Do stuff here.
+end)
+```

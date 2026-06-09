@@ -1,0 +1,28 @@
+---
+title: FBArray
+---
+
+## Summary
+
+A generic Array. This array can hold any type. It can be iterated through via `ipairs(array)` & `pairs(array)`, you can get the length of the array via `#array`, get values via `local value = array[index]`, & set it via `array[index] = newValue`.
+
+### Methods
+
+| Method | Returns |
+| ------ | ------- |
+| **[extend](#extend)**(amount: integer) | void |
+
+## Methods
+
+### extend
+
+> **extend**(amount: integer): void
+
+Extend how big the array is by an amount.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| amount | integer | Extend the array size by this amount. |
+

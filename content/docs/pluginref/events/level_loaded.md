@@ -1,0 +1,23 @@
+---
+title: Level:Loaded
+---
+
+> **Level:Loaded**(level: string, mode: string)
+
+as soon as a level is loaded.
+
+
+## Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| **level** | string |  |
+| **mode** | string |  |
+
+## Example
+
+```lua
+EventManager.Listen("Level:Loaded", function(level, mode)
+    -- Do stuff here.
+end)
+```

@@ -1,0 +1,16 @@
+---
+title: Server:Init
+---
+
+> **Server:Init**()
+
+as soon as the server is fully created. The first event to run. A good place to put initialization logic.
+
+
+## Example
+
+```lua
+EventManager.Listen("Server:Init", function()
+    -- Do stuff here.
+end)
+```

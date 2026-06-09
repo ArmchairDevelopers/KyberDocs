@@ -1,0 +1,92 @@
+---
+title: MapRotation
+---
+
+## Summary
+
+MapRotation global table.
+Manages the server's map rotation, including adding, removing, and getting map entries.
+
+### Functions
+
+| Method | Returns |
+| ------ | ------- |
+| **[AddMap](#addmap)**(level: string, mode: string) | void |
+| **[Clear](#clear)**(level: string, mode: string) | void |
+| **[GetNextMap](#getnextmap)**() | [MapRotationEntry](/g/pluginref/types/maprotationentry) |
+| **[RemoveNextMap](#removenextmap)**() | void |
+| **[GetCurrentEntryIndex](#getcurrententryindex)**() | integer |
+| **[GetList](#getlist)**() | [MapRotationEntry](/g/pluginref/types/maprotationentry)[] |
+
+## Functions
+
+### AddMap
+
+> **AddMap**(level: string, mode: string): void
+
+Adds a map entry to the end of the rotation.
+Raises an error if either `level` or `mode` is an empty string.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| **level** | string | The level path to add. |
+| **mode** | string | The gamemode id to add. |
+
+### Clear
+
+> **Clear**(level: string, mode: string): void
+
+Clears the entire rotation and resets it with a single required starting entry.
+Raises an error if either `level` or `mode` is an empty string.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| **level** | string | The level path for the first entry after clearing. |
+| **mode** | string | The gamemode id for the first entry after clearing. |
+
+### GetNextMap
+
+> **GetNextMap**(): [MapRotationEntry](/g/pluginref/types/maprotationentry)
+
+Returns the next map entry in the rotation without removing it.
+
+#### Returns
+
+| Type | Description |
+| ---- | ----------- |
+| **[MapRotationEntry](/g/pluginref/types/maprotationentry)** | entry A table containing `level` and `mode` fields. |
+
+### RemoveNextMap
+
+> **RemoveNextMap**(): void
+
+Removes the next map entry from the rotation.
+
+### GetCurrentEntryIndex
+
+> **GetCurrentEntryIndex**(): integer
+
+Returns the current index within the map rotation list.
+
+#### Returns
+
+| Type | Description |
+| ---- | ----------- |
+| **integer** | index The index of the current rotation entry. |
+
+### GetList
+
+> **GetList**(): [MapRotationEntry](/g/pluginref/types/maprotationentry)[]
+
+Returns the full list of map rotation entries.
+
+#### Returns
+
+| Type | Description |
+| ---- | ----------- |
+| **[MapRotationEntry](/g/pluginref/types/maprotationentry)[]** | entries An array of tables, each containing `level` and `mode` fields. |
+
