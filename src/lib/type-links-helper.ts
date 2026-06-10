@@ -15,6 +15,11 @@ export function transformerTypeLinks(): ShikiTransformer {
                 return;
             }
 
+            const meta = this.options.meta?.__raw ?? '';
+            if (!meta.split(/\s+/).includes('linkTypes')) {
+                return;
+            }
+
             const child = node.children[0];
             if (child?.type !== 'text') {
                 return;
