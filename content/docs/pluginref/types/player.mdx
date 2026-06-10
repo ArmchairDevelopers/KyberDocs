@@ -19,9 +19,9 @@ Represents a server-side player instance.
 | [kills](#kills) | integer |
 | [assists](#assists) | integer |
 | [deaths](#deaths) | integer |
-| [characterEntity](#characterentity) | Entity |
-| [vehicleEntity](#vehicleentity) | Entity |
-| [activeKit](#activekit) | DataContainer |
+| [characterEntity](#characterentity) | [Entity](/g/pluginref/types/entity) |
+| [vehicleEntity](#vehicleentity) | [Entity](/g/pluginref/types/entity) |
+| [activeKit](#activekit) | [DataContainer](/g/pluginref/types/datacontainer) |
 | [isBot](#isbot) | boolean |
 | [isSpawned](#isspawned) | boolean |
 
@@ -120,7 +120,7 @@ The player's current death count.
 
 ### characterEntity
 
-> **Entity**
+> **[Entity](/g/pluginref/types/entity)**
 
 The character entity the player is currently occupying, or nil if not spawned on foot.
 
@@ -128,7 +128,7 @@ The character entity the player is currently occupying, or nil if not spawned on
 
 ### vehicleEntity
 
-> **Entity**
+> **[Entity](/g/pluginref/types/entity)**
 
 The vehicle entity the player is currently occupying, or nil if not in a vehicle.
 
@@ -136,7 +136,7 @@ The vehicle entity the player is currently occupying, or nil if not in a vehicle
 
 ### activeKit
 
-> **DataContainer**
+> **[DataContainer](/g/pluginref/types/datacontainer)**
 
 The active kit/loadout asset for the player, or nil if none is set.
 
