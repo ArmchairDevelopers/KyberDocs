@@ -22,7 +22,9 @@ Manages the server's map rotation, including adding, removing, and getting map e
 
 ### AddMap
 
-> **AddMap**(level: string, mode: string): void
+```lua linkTypes
+AddMap(level: string, mode: string): void
+```
 
 Adds a map entry to the end of the rotation.
 Raises an error if either `level` or `mode` is an empty string.
@@ -36,7 +38,9 @@ Raises an error if either `level` or `mode` is an empty string.
 
 ### Clear
 
-> **Clear**(level: string, mode: string): void
+```lua linkTypes
+Clear(level: string, mode: string): void
+```
 
 Clears the entire rotation and resets it with a single required starting entry.
 Raises an error if either `level` or `mode` is an empty string.
@@ -50,7 +54,9 @@ Raises an error if either `level` or `mode` is an empty string.
 
 ### GetNextMap
 
-> **GetNextMap**(): [MapRotationEntry](/g/pluginref/types/maprotationentry)
+```lua linkTypes
+GetNextMap(): MapRotationEntry
+```
 
 Returns the next map entry in the rotation without removing it.
 
@@ -62,13 +68,17 @@ Returns the next map entry in the rotation without removing it.
 
 ### RemoveNextMap
 
-> **RemoveNextMap**(): void
+```lua linkTypes
+RemoveNextMap(): void
+```
 
 Removes the next map entry from the rotation.
 
 ### GetCurrentEntryIndex
 
-> **GetCurrentEntryIndex**(): integer
+```lua linkTypes
+GetCurrentEntryIndex(): integer
+```
 
 Returns the current index within the map rotation list.
 
@@ -80,7 +90,9 @@ Returns the current index within the map rotation list.
 
 ### GetList
 
-> **GetList**(): [MapRotationEntry](/g/pluginref/types/maprotationentry)[]
+```lua linkTypes
+GetList(): MapRotationEntry
+```
 
 Returns the full list of map rotation entries.
 

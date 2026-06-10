@@ -1,0 +1,448 @@
+---
+title: Player
+---
+
+## Summary
+
+A server player.
+Represents a server-side player instance.
+
+### Properties
+
+| Name | Type |
+| ---- | ---- |
+| [name](#name) | string |
+| [playerId](#playerid) | integer |
+| [team](#team) | integer |
+| [battlepoints](#battlepoints) | integer |
+| [score](#score) | integer |
+| [kills](#kills) | integer |
+| [assists](#assists) | integer |
+| [deaths](#deaths) | integer |
+| [characterEntity](#characterentity) | Entity |
+| [vehicleEntity](#vehicleentity) | Entity |
+| [activeKit](#activekit) | DataContainer |
+| [isBot](#isbot) | boolean |
+| [isSpawned](#isspawned) | boolean |
+
+### Methods
+
+| Method | Returns |
+| ------ | ------- |
+| **[SetTeam](#setteam)**(team: integer) | void |
+| **[SetWeapon](#setweapon)**(weaponName: string) | void |
+| **[GetWeapon](#getweapon)**() | DataContainer |
+| **[SetScore](#setscore)**(amount: integer) | void |
+| **[SetKills](#setkills)**(amount: integer) | void |
+| **[SetAssists](#setassists)**(amount: integer) | void |
+| **[SetDeaths](#setdeaths)**(amount: integer) | void |
+| **[SetBattlepoints](#setbattlepoints)**(amount: integer) | void |
+| **[GiveBattlepoints](#givebattlepoints)**(amount: integer) | void |
+| **[SetCustomizationAsset](#setcustomizationasset)**(assetName: string) | void |
+| **[SetUnlock](#setunlock)**(assetGuid: string, grant: boolean) | void |
+| **[Kick](#kick)**(reason: any) | void |
+| **[SetInvisible](#setinvisible)**(invisible: boolean) | void |
+| **[SetHealth](#sethealth)**(amount: integer) | void |
+| **[SetMaxHealth](#setmaxhealth)**(amount: integer) | void |
+| **[SetAbility](#setability)**(abilityId: integer) | void |
+| **[ForceSendChatMessage](#forcesendchatmessage)**(channel: integer, message: string) | void |
+| **[SendChatMessage](#sendchatmessage)**(message: string) | void |
+| **[SetInputEnabled](#setinputenabled)**(actionId: integer, enabled: boolean) | void |
+| **[SendSyncedSettings](#sendsyncedsettings)**() | void |
+
+## Properties
+
+---
+
+### name
+
+> **string**
+
+Player's username.
+
+---
+
+### playerId
+
+> **integer**
+
+Player's EA player id.
+
+---
+
+### team
+
+> **integer**
+
+Player's current team.
+
+---
+
+### battlepoints
+
+> **integer**
+
+Player's battlepoint count.
+
+---
+
+### score
+
+> **integer**
+
+The player's current score.
+
+---
+
+### kills
+
+> **integer**
+
+The player's current kill count.
+
+---
+
+### assists
+
+> **integer**
+
+The player's current assist count.
+
+---
+
+### deaths
+
+> **integer**
+
+The player's current death count.
+
+---
+
+### characterEntity
+
+> **Entity**
+
+The character entity the player is currently occupying, or nil if not spawned on foot.
+
+---
+
+### vehicleEntity
+
+> **Entity**
+
+The vehicle entity the player is currently occupying, or nil if not in a vehicle.
+
+---
+
+### activeKit
+
+> **DataContainer**
+
+The active kit/loadout asset for the player, or nil if none is set.
+
+---
+
+### isBot
+
+> **boolean**
+
+If player is a bot.
+
+---
+
+### isSpawned
+
+> **boolean**
+
+If player is spawned as a character or vehicle.
+
+---
+## Methods
+
+### SetTeam
+
+```lua linkTypes
+SetTeam(team: integer): void
+```
+
+Sets the player's team.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| team | integer | The team id to set. |
+
+### SetWeapon
+
+```lua linkTypes
+SetWeapon(weaponName: string): void
+```
+
+Sets the player's primary weapon by asset name.
+Does nothing if the player has no soldier extent or the asset cannot be found.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| weaponName | string | The resource name of the weapon asset to equip. |
+
+### GetWeapon
+
+```lua linkTypes
+GetWeapon(): DataContainer
+```
+
+Returns the player's currently equipped primary weapon as a DataContainer asset.
+Returns nothing if the player has no soldier extent or no weapon assigned.
+
+#### Returns
+
+| Type | Description |
+| ---- | ----------- |
+| **DataContainer** | weapon The weapon asset. |
+
+### SetScore
+
+```lua linkTypes
+SetScore(amount: integer): void
+```
+
+Sets the player's score to an exact amount.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| amount | integer | The score value to set. |
+
+### SetKills
+
+```lua linkTypes
+SetKills(amount: integer): void
+```
+
+Sets the player's kill count to an exact amount.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| amount | integer | The kill count to set. |
+
+### SetAssists
+
+```lua linkTypes
+SetAssists(amount: integer): void
+```
+
+Sets the player's assist count to an exact amount.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| amount | integer | The assist count to set. |
+
+### SetDeaths
+
+```lua linkTypes
+SetDeaths(amount: integer): void
+```
+
+Sets the player's death count to an exact amount.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| amount | integer | The death count to set. |
+
+### SetBattlepoints
+
+```lua linkTypes
+SetBattlepoints(amount: integer): void
+```
+
+Sets player's battlepoints.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| amount | integer | The amount desired. |
+
+### GiveBattlepoints
+
+```lua linkTypes
+GiveBattlepoints(amount: integer): void
+```
+
+Give player battlepoints
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| amount | integer | The amount desired. |
+
+### SetCustomizationAsset
+
+```lua linkTypes
+SetCustomizationAsset(assetName: string): void
+```
+
+**[EXPERIMENTAL]** Sets the player's customization asset by resource name.
+Does nothing if the asset cannot be found.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| assetName | string | The resource name of the customization asset. |
+
+### SetUnlock
+
+```lua linkTypes
+SetUnlock(assetGuid: string, grant: boolean): void
+```
+
+Grants or revokes a specific unlock on the player by GUID string.
+Does nothing if the GUID string or boolean argument is missing.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| assetGuid | string | The string representation of the unlock's GUID. |
+| grant | boolean | `true` to grant the unlock, `false` to revoke it. |
+
+### Kick
+
+```lua linkTypes
+Kick(reason: any): void
+```
+
+Kick server player from the server.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| reason | any |  |
+
+### SetInvisible
+
+```lua linkTypes
+SetInvisible(invisible: boolean): void
+```
+
+Sets the player's character entity visibility.
+Does nothing if the player has no character entity.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| invisible | boolean | `true` to force the player invisible, `false` to restore visibility. |
+
+### SetHealth
+
+```lua linkTypes
+SetHealth(amount: integer): void
+```
+
+Sets the player's current health value.
+Does nothing if the player has no character entity or health component.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| amount | integer | The health value to set. |
+
+### SetMaxHealth
+
+```lua linkTypes
+SetMaxHealth(amount: integer): void
+```
+
+Sets the player's maximum health value.
+Only works if the player's health component is a WSServerSoldierHealthComponent.
+Does nothing if the player has no character entity or the health component is of an incompatible type.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| amount | integer | The maximum health value to set. |
+
+### SetAbility
+
+```lua linkTypes
+SetAbility(abilityId: integer): void
+```
+
+Sets the player's active ability by ability ID.
+Does nothing if the ability asset cannot be loaded for the given ID.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| abilityId | integer | The ID of the ability to assign. |
+
+### ForceSendChatMessage
+
+```lua linkTypes
+ForceSendChatMessage(channel: integer, message: string): void
+```
+
+Forces the player to send a chat message on a specified channel.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| channel | integer | The chat channel ID (maps to ChatChannel enum). |
+| message | string | The message content to send. |
+
+### SendChatMessage
+
+```lua linkTypes
+SendChatMessage(message: string): void
+```
+
+Sends a server chat message attributed to the player.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| message | string | The message content to send. |
+
+### SetInputEnabled
+
+```lua linkTypes
+SetInputEnabled(actionId: integer, enabled: boolean): void
+```
+
+Enables or disables a specific input action for the player.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| actionId | integer | The ID of the input action to control. |
+| enabled | boolean | `true` to enable the input, `false` to disable it. |
+
+### SendSyncedSettings
+
+```lua linkTypes
+SendSyncedSettings(): void
+```
+
+Resends synced game settings to the player's connection.
+Useful after modifying server-side settings that need to be re-synced to the client.
+

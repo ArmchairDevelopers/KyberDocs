@@ -12,12 +12,15 @@ PlayerManager global table.
 | ------ | ------- |
 | **[GetPlayers](#getplayers)**() | [Player](/g/pluginref/types/player)[] |
 | **[GetPlayer](#getplayer)**(playerName: string) | [Player](/g/pluginref/types/player) |
+| **[CreatePlayer](#createplayer)**(name: string) | [Player](/g/pluginref/types/player) |
 
 ## Functions
 
 ### GetPlayers
 
-> **GetPlayers**(): [Player](/g/pluginref/types/player)[]
+```lua linkTypes
+GetPlayers(): Player
+```
 
 Gets all players online (both real and AI).
 
@@ -29,7 +32,9 @@ Gets all players online (both real and AI).
 
 ### GetPlayer
 
-> **GetPlayer**(playerName: string): [Player](/g/pluginref/types/player)
+```lua linkTypes
+GetPlayer(playerName: string): Player
+```
 
 Gets the player requested.
 
@@ -44,4 +49,24 @@ Gets the player requested.
 | Type | Description |
 | ---- | ----------- |
 | **[Player](/g/pluginref/types/player)** |  |
+
+### CreatePlayer
+
+```lua linkTypes
+CreatePlayer(name: string): Player
+```
+
+Creates a new bot player with the given name.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| **name** | string | The display name for the new bot player. |
+
+#### Returns
+
+| Type | Description |
+| ---- | ----------- |
+| **[Player](/g/pluginref/types/player)** | player The newly created Player instance. |
 

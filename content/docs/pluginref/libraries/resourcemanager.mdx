@@ -16,7 +16,9 @@ ResourceManager global table.
 
 ### LookupDataContainer
 
-> **LookupDataContainer**(assetName: string): [DataContainer](/g/pluginref/types/datacontainer)
+```lua linkTypes
+LookupDataContainer(assetName: string): DataContainer
+```
 
 Get the the Asset of the name provided in ANY loaded bundle. This function is **EXTREMELY SLOW** so if you do need to use it, make it sparingly.
 

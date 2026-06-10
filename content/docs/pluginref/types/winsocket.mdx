@@ -20,7 +20,9 @@ The socket is automatically closed when garbage collected.
 
 ### Accept
 
-> **Accept**(): [WinSocket](/g/pluginref/types/winsocket)
+```lua linkTypes
+Accept(): WinSocket
+```
 
 Accepts an incoming client connection on a listening socket.
 Returns `nil` if no client is ready (non-blocking, WSAEWOULDBLOCK).
@@ -34,7 +36,9 @@ Raises an error if the accept call fails for any other reason.
 
 ### Recv
 
-> **Recv**(length: number): string
+```lua linkTypes
+Recv(length: number): string
+```
 
 Receives data from the socket up to `length` bytes.
 Returns an empty string if the connection was closed gracefully.
@@ -54,7 +58,9 @@ Raises an error if the recv call fails.
 
 ### Send
 
-> **Send**(data: string): number
+```lua linkTypes
+Send(data: string): number
+```
 
 Sends a string of data over the socket.
 Raises an error if the send call fails.
@@ -73,7 +79,9 @@ Raises an error if the send call fails.
 
 ### Close
 
-> **Close**(): void
+```lua linkTypes
+Close(): void
+```
 
 Closes the socket connection and releases the handle.
 

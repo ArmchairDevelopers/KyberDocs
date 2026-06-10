@@ -17,7 +17,9 @@ SocketManager global table.
 
 ### Create
 
-> **Create**(port: integer): [WinSocket](/g/pluginref/types/winsocket)
+```lua linkTypes
+Create(port: integer): WinSocket
+```
 
 Creates a non-blocking TCP listening socket bound to the given port on all interfaces.
 The socket is set to non-blocking mode and begins listening immediately.
@@ -37,7 +39,9 @@ Raises an error if the socket cannot be created, bound, or set to listen.
 
 ### CreateSend
 
-> **CreateSend**(uri: string, port: integer): [WinSocket](/g/pluginref/types/winsocket)
+```lua linkTypes
+CreateSend(uri: string, port: integer): WinSocket
+```
 
 Creates a non-blocking TCP socket and connects to it.
 The URI must be `"127.0.0.1"`. connections to external addresses are not allowed.

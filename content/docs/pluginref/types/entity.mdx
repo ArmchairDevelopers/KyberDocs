@@ -45,7 +45,9 @@ The entity's bus.
 
 ### Event
 
-> **Event**(event: [EntityEvent](/g/pluginref/types/entityevent)): void
+```lua linkTypes
+Event(event: EntityEvent): void
+```
 
 Queue an event to be executed into the context it is in.
 
@@ -57,7 +59,9 @@ Queue an event to be executed into the context it is in.
 
 ### FireEvent
 
-> **FireEvent**(event: [EntityEvent](/g/pluginref/types/entityevent)): void
+```lua linkTypes
+FireEvent(event: EntityEvent): void
+```
 
 Immediately fire an event to be processed internally in the entity.
 
@@ -69,7 +73,9 @@ Immediately fire an event to be processed internally in the entity.
 
 ### Write
 
-> **Write**(fieldName: string, typeName: string, value: any): void
+```lua linkTypes
+Write(fieldName: string, typeName: string, value: any): void
+```
 
 Execute a property write on the entity. These are the **IN** properties.
 
@@ -83,7 +89,9 @@ Execute a property write on the entity. These are the **IN** properties.
 
 ### Read
 
-> **Read**(fieldName: string, typeName: string): any
+```lua linkTypes
+Read(fieldName: string, typeName: string): any
+```
 
 Read a property from the entity. These are the **OUT** properties.
 

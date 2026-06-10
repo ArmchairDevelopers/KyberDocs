@@ -25,37 +25,49 @@ ChatFilter global table.
 
 ### Clear
 
-> **Clear**(): void
+```lua linkTypes
+Clear(): void
+```
 
 Clears all blocked phrases & regex.
 
 ### ClearBlockedPhrases
 
-> **ClearBlockedPhrases**(): void
+```lua linkTypes
+ClearBlockedPhrases(): void
+```
 
 Clears all blocked phrases.
 
 ### ClearBlockedRegex
 
-> **ClearBlockedRegex**(): void
+```lua linkTypes
+ClearBlockedRegex(): void
+```
 
 Clears all blocked regex.
 
 ### Enable
 
-> **Enable**(): void
+```lua linkTypes
+Enable(): void
+```
 
 Enable chat filter filtering messages. Note: Even when disabled, you can still access these table functions.
 
 ### Disable
 
-> **Disable**(): void
+```lua linkTypes
+Disable(): void
+```
 
 Disable chat filter filtering messages. Note: Even when disabled, you can still access these table functions.
 
 ### IsEnabled
 
-> **IsEnabled**(): boolean
+```lua linkTypes
+IsEnabled(): boolean
+```
 
 Returns if the chat filter is enabled.
 
@@ -67,7 +79,9 @@ Returns if the chat filter is enabled.
 
 ### AddBlockedPhrase
 
-> **AddBlockedPhrase**(phrase: string): boolean
+```lua linkTypes
+AddBlockedPhrase(phrase: string): boolean
+```
 
 Add blocked phrase to chat filter. Filtering of this type is case insensitive. Returns whether the phrase was added to the list or already existed (false)
 
@@ -85,7 +99,9 @@ Add blocked phrase to chat filter. Filtering of this type is case insensitive. R
 
 ### AddBlockedRegex
 
-> **AddBlockedRegex**(phrase: string): boolean
+```lua linkTypes
+AddBlockedRegex(phrase: string): boolean
+```
 
 Add blocked regex to chat filter. Returns whether the regex was added to the list or already existed (false)
 
@@ -103,7 +119,9 @@ Add blocked regex to chat filter. Returns whether the regex was added to the lis
 
 ### SetFilterCharacter
 
-> **SetFilterCharacter**(char: string): void
+```lua linkTypes
+SetFilterCharacter(char: string): void
+```
 
 Sets the chat filter's replacement character. For example, if set to '#', "blah badword" -> "blah #######"
 
@@ -115,7 +133,9 @@ Sets the chat filter's replacement character. For example, if set to '#', "blah 
 
 ### GetFilterCharacter
 
-> **GetFilterCharacter**(char: any): boolean
+```lua linkTypes
+GetFilterCharacter(char: any): boolean
+```
 
 Gets the chat filter's replacement character.
 
