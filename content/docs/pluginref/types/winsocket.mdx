@@ -15,6 +15,8 @@ The socket is automatically closed when garbage collected.
 | **[Recv](#recv)**(length: number) | string |
 | **[Send](#send)**(data: string) | number |
 | **[Close](#close)**() | void |
+| **[Shutdown](#shutdown)**() | void |
+| **[ShutdownSend](#shutdownsend)**() | void |
 
 ## Methods
 
@@ -84,4 +86,20 @@ Close(): void
 ```
 
 Closes the socket connection and releases the handle.
+
+### Shutdown
+
+```lua linkTypes
+Shutdown(): void
+```
+
+Disables sends or receives on a socket
+
+### ShutdownSend
+
+```lua linkTypes
+ShutdownSend(): void
+```
+
+Disables sends on a socket.
 

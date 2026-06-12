@@ -19,7 +19,7 @@ ChatFilter global table.
 | **[AddBlockedPhrase](#addblockedphrase)**(phrase: string) | boolean |
 | **[AddBlockedRegex](#addblockedregex)**(phrase: string) | boolean |
 | **[SetFilterCharacter](#setfiltercharacter)**(char: string) | void |
-| **[GetFilterCharacter](#getfiltercharacter)**(char: any) | boolean |
+| **[GetFilterCharacter](#getfiltercharacter)**() | string |
 
 ## Functions
 
@@ -134,20 +134,14 @@ Sets the chat filter's replacement character. For example, if set to '#', "blah 
 ### GetFilterCharacter
 
 ```lua linkTypes
-GetFilterCharacter(char: any): boolean
+GetFilterCharacter(): string
 ```
 
 Gets the chat filter's replacement character.
-
-#### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| **char** | any |  |
 
 #### Returns
 
 | Type | Description |
 | ---- | ----------- |
-| **boolean** |  |
+| **string** | character |
 
