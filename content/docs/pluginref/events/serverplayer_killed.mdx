@@ -1,0 +1,26 @@
+---
+title: ServerPlayer:Killed
+---
+
+```lua linkTypes
+ServerPlayer:Killed(victim: Player, killer: Player, killerWeaponName: string)
+```
+
+Ran when a player is killed. Killer player may be nil.
+
+
+## Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| **victim** | [Player](/g/pluginref/types/player) |  |
+| **killer** | [Player](/g/pluginref/types/player) |  |
+| **killerWeaponName** | string |  |
+
+## Example
+
+```lua
+EventManager.Listen("ServerPlayer:Killed", function(victim, killer, killerWeaponName)
+    -- Do stuff here.
+end)
+```

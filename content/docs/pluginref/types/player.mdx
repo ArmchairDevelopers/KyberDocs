@@ -23,7 +23,7 @@ Represents a server-side player instance.
 | [vehicleEntity](#vehicleentity) | [Entity](/g/pluginref/types/entity) |
 | [activeKit](#activekit) | [DataContainer](/g/pluginref/types/datacontainer) |
 | [isBot](#isbot) | boolean |
-| [isSpawned](#isspawned) | boolean |
+| [isAlive](#isalive) | boolean |
 
 ### Methods
 
@@ -40,7 +40,7 @@ Represents a server-side player instance.
 | **[GiveBattlepoints](#givebattlepoints)**(amount: integer) | void |
 | **[SetCustomizationAsset](#setcustomizationasset)**(assetName: string) | void |
 | **[SetUnlock](#setunlock)**(assetGuid: string, grant: boolean) | void |
-| **[Kick](#kick)**(reason: any) | void |
+| **[Kick](#kick)**(reason: string) | void |
 | **[SetInvisible](#setinvisible)**(invisible: boolean) | void |
 | **[SetHealth](#sethealth)**(amount: integer) | void |
 | **[SetMaxHealth](#setmaxhealth)**(amount: integer) | void |
@@ -49,6 +49,11 @@ Represents a server-side player instance.
 | **[SendChatMessage](#sendchatmessage)**(message: string) | void |
 | **[SetInputEnabled](#setinputenabled)**(actionId: integer, enabled: boolean) | void |
 | **[SendSyncedSettings](#sendsyncedsettings)**() | void |
+| **[SetImmortal](#setimmortal)**(isImmortal: boolean) | void |
+| **[SetFakeImmortal](#setfakeimmortal)**(isFakeImmortal: boolean) | void |
+| **[SetExplosionDamageModifier](#setexplosiondamagemodifier)**(modifier: number) | void |
+| **[SetMoveSpeedMultiplier](#setmovespeedmultiplier)**(modifier: number) | void |
+| **[SetCooldownModifier](#setcooldownmodifier)**(modifier: number) | void |
 
 ## Properties
 
@@ -150,11 +155,11 @@ If player is a bot.
 
 ---
 
-### isSpawned
+### isAlive
 
 > **boolean**
 
-If player is spawned as a character or vehicle.
+If player is actively spawned as a character or vehicle.
 
 ---
 ## Methods
@@ -321,7 +326,7 @@ Does nothing if the GUID string or boolean argument is missing.
 ### Kick
 
 ```lua linkTypes
-Kick(reason: any): void
+Kick(reason: string): void
 ```
 
 Kick server player from the server.
@@ -330,7 +335,7 @@ Kick server player from the server.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| reason | any |  |
+| reason | string | Set reason for the kick. |
 
 ### SetInvisible
 
@@ -384,7 +389,7 @@ Does nothing if the player has no character entity or the health component is of
 SetAbility(abilityId: integer): void
 ```
 
-Sets the player's active ability by ability ID.
+Sets the player's character (notably not vehicle) active ability by ability ID.
 Does nothing if the ability asset cannot be loaded for the given ID.
 
 #### Parameters
@@ -414,7 +419,7 @@ Forces the player to send a chat message on a specified channel.
 SendChatMessage(message: string): void
 ```
 
-Sends a server chat message attributed to the player.
+Sends chat message to the player.
 
 #### Parameters
 
@@ -445,4 +450,74 @@ SendSyncedSettings(): void
 
 Resends synced game settings to the player's connection.
 Useful after modifying server-side settings that need to be re-synced to the client.
+
+### SetImmortal
+
+```lua linkTypes
+SetImmortal(isImmortal: boolean): void
+```
+
+Set if the player's character (notably not vehicle) is damageable.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| isImmortal | boolean |  |
+
+### SetFakeImmortal
+
+```lua linkTypes
+SetFakeImmortal(isFakeImmortal: boolean): void
+```
+
+Set if the player's character (notably not vehicle) is fake damageable.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| isFakeImmortal | boolean |  |
+
+### SetExplosionDamageModifier
+
+```lua linkTypes
+SetExplosionDamageModifier(modifier: number): void
+```
+
+Set how much the player's character (notably not vehicle) takes explosion damage
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| modifier | number | The value multiplied with the damage. |
+
+### SetMoveSpeedMultiplier
+
+```lua linkTypes
+SetMoveSpeedMultiplier(modifier: number): void
+```
+
+Set how fast the player's character (notably not vehicle) is.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| modifier | number | The value to set. |
+
+### SetCooldownModifier
+
+```lua linkTypes
+SetCooldownModifier(modifier: number): void
+```
+
+Sets the player's character (notably not vehicle) total cooldown timer is. Higher values is slower, lower values is faster.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| modifier | number | The value to set. |
 

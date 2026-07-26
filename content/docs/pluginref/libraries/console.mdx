@@ -10,7 +10,7 @@ Console global table.
 
 | Method | Returns |
 | ------ | ------- |
-| **[GetSettings](#getsettings)**(category: string) | void |
+| **[GetSettings](#getsettings)**(category: string) | [DataContainer](/g/pluginref/types/datacontainer) |
 | **[Execute](#execute)**(command: string) | void |
 | **[Register](#register)**(group: string, name: string, description: string, inst: table, callback: function) | void |
 
@@ -19,7 +19,7 @@ Console global table.
 ### GetSettings
 
 ```lua linkTypes
-GetSettings(category: string): void
+GetSettings(category: string): DataContainer
 ```
 
 Gets the settings for a specific category.
@@ -29,6 +29,12 @@ Gets the settings for a specific category.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | **category** | string | The category to get the settings for. |
+
+#### Returns
+
+| Type | Description |
+| ---- | ----------- |
+| **[DataContainer](/g/pluginref/types/datacontainer)** | Settings object |
 
 ### Execute
 

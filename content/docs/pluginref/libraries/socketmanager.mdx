@@ -11,7 +11,7 @@ SocketManager global table.
 | Method | Returns |
 | ------ | ------- |
 | **[Create](#create)**(port: integer) | [WinSocket](/g/pluginref/types/winsocket) |
-| **[CreateSend](#createsend)**(uri: string, port: integer) | [WinSocket](/g/pluginref/types/winsocket) |
+| **[CreateConnect](#createconnect)**(uri: string, port: integer) | [WinSocket](/g/pluginref/types/winsocket) |
 
 ## Functions
 
@@ -37,10 +37,10 @@ Raises an error if the socket cannot be created, bound, or set to listen.
 | ---- | ----------- |
 | **[WinSocket](/g/pluginref/types/winsocket)** | socket The created listening socket. |
 
-### CreateSend
+### CreateConnect
 
 ```lua linkTypes
-CreateSend(uri: string, port: integer): WinSocket
+CreateConnect(uri: string, port: integer): WinSocket
 ```
 
 Creates a non-blocking TCP socket and connects to it.

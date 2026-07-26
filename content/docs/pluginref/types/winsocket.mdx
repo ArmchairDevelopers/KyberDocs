@@ -93,7 +93,7 @@ Closes the socket connection and releases the handle.
 Shutdown(): void
 ```
 
-Disables sends or receives on a socket
+Disables sends or receives on a socket. `Recv()` is one of the functionalities that will be disabled if this is used.
 
 ### ShutdownSend
 
@@ -101,5 +101,5 @@ Disables sends or receives on a socket
 ShutdownSend(): void
 ```
 
-Disables sends on a socket.
+Disables sends on a socket. `Recv()` will not be disabled and will send any lingering data.
 
