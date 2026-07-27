@@ -14,6 +14,8 @@ The socket is automatically closed when garbage collected.
 | **[Accept](#accept)**() | [WinSocket](/g/pluginref/types/winsocket) |
 | **[Recv](#recv)**(length: number) | string |
 | **[Send](#send)**(data: string) | number |
+| **[PollConnectionStatus](#pollconnectionstatus)**() | integer |
+| **[IsOutgoingConnectionUsable](#isoutgoingconnectionusable)**() | boolean |
 | **[Close](#close)**() | void |
 | **[Shutdown](#shutdown)**() | void |
 | **[ShutdownSend](#shutdownsend)**() | void |
@@ -78,6 +80,36 @@ Raises an error if the send call fails.
 | Type | Description |
 | ---- | ----------- |
 | **number** | bytesSent The number of bytes successfully sent. |
+
+### PollConnectionStatus
+
+```lua linkTypes
+PollConnectionStatus(): integer
+```
+
+Specifically for outgoing request sockets. Returns 0 if pending, 1 if successfully connected
+(and therefore can properly send data), and 2 if failed.
+
+#### Returns
+
+| Type | Description |
+| ---- | ----------- |
+| **integer** |  |
+
+### IsOutgoingConnectionUsable
+
+```lua linkTypes
+IsOutgoingConnectionUsable(): boolean
+```
+
+Specifically for outgoing request sockets. Returns true if specifically after PollConnectionStatus()
+returned 1 and therefore had no connection errors.
+
+#### Returns
+
+| Type | Description |
+| ---- | ----------- |
+| **boolean** |  |
 
 ### Close
 
