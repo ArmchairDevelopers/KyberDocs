@@ -19,7 +19,7 @@ Console global table.
 ### GetSettings
 
 ```lua linkTypes
-GetSettings(category: string): DataContainer
+Console.GetSettings(category: string): DataContainer
 ```
 
 Gets the settings for a specific category.
@@ -39,7 +39,7 @@ Gets the settings for a specific category.
 ### Execute
 
 ```lua linkTypes
-Execute(command: string): void
+Console.Execute(command: string): void
 ```
 
 Execute a console command.
@@ -53,7 +53,7 @@ Execute a console command.
 ### Register
 
 ```lua linkTypes
-Register(group: string, name: string, description: string, inst: table, callback: function): void
+Console.Register(group: string, name: string, description: string, inst: table, callback: function): void
 ```
 
 Register a new command.

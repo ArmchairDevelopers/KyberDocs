@@ -26,7 +26,7 @@ ChatFilter global table.
 ### Clear
 
 ```lua linkTypes
-Clear(): void
+ChatFilter.Clear(): void
 ```
 
 Clears all blocked phrases & regex.
@@ -34,7 +34,7 @@ Clears all blocked phrases & regex.
 ### ClearBlockedPhrases
 
 ```lua linkTypes
-ClearBlockedPhrases(): void
+ChatFilter.ClearBlockedPhrases(): void
 ```
 
 Clears all blocked phrases.
@@ -42,7 +42,7 @@ Clears all blocked phrases.
 ### ClearBlockedRegex
 
 ```lua linkTypes
-ClearBlockedRegex(): void
+ChatFilter.ClearBlockedRegex(): void
 ```
 
 Clears all blocked regex.
@@ -50,7 +50,7 @@ Clears all blocked regex.
 ### Enable
 
 ```lua linkTypes
-Enable(): void
+ChatFilter.Enable(): void
 ```
 
 Enable chat filter filtering messages. Note: Even when disabled, you can still access these table functions.
@@ -58,7 +58,7 @@ Enable chat filter filtering messages. Note: Even when disabled, you can still a
 ### Disable
 
 ```lua linkTypes
-Disable(): void
+ChatFilter.Disable(): void
 ```
 
 Disable chat filter filtering messages. Note: Even when disabled, you can still access these table functions.
@@ -66,7 +66,7 @@ Disable chat filter filtering messages. Note: Even when disabled, you can still 
 ### IsEnabled
 
 ```lua linkTypes
-IsEnabled(): boolean
+ChatFilter.IsEnabled(): boolean
 ```
 
 Returns if the chat filter is enabled.
@@ -80,7 +80,7 @@ Returns if the chat filter is enabled.
 ### AddBlockedPhrase
 
 ```lua linkTypes
-AddBlockedPhrase(phrase: string): boolean
+ChatFilter.AddBlockedPhrase(phrase: string): boolean
 ```
 
 Add blocked phrase to chat filter. Filtering of this type is case insensitive. Returns whether the phrase was added to the list or already existed (false)
@@ -100,7 +100,7 @@ Add blocked phrase to chat filter. Filtering of this type is case insensitive. R
 ### AddBlockedRegex
 
 ```lua linkTypes
-AddBlockedRegex(phrase: string): boolean
+ChatFilter.AddBlockedRegex(phrase: string): boolean
 ```
 
 Add blocked regex to chat filter. Returns whether the regex was added to the list or already existed (false)
@@ -120,7 +120,7 @@ Add blocked regex to chat filter. Returns whether the regex was added to the lis
 ### SetFilterCharacter
 
 ```lua linkTypes
-SetFilterCharacter(char: string): void
+ChatFilter.SetFilterCharacter(char: string): void
 ```
 
 Sets the chat filter's replacement character. For example, if set to '#', "blah badword" -> "blah #######"
@@ -134,7 +134,7 @@ Sets the chat filter's replacement character. For example, if set to '#', "blah 
 ### GetFilterCharacter
 
 ```lua linkTypes
-GetFilterCharacter(): string
+ChatFilter.GetFilterCharacter(): string
 ```
 
 Gets the chat filter's replacement character.

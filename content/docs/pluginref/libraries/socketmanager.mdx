@@ -18,7 +18,7 @@ SocketManager global table.
 ### Create
 
 ```lua linkTypes
-Create(port: integer): WinSocket
+SocketManager.Create(port: integer): WinSocket
 ```
 
 Creates a non-blocking TCP listening socket bound to the given port on all interfaces.
@@ -40,7 +40,7 @@ Raises an error if the socket cannot be created, bound, or set to listen.
 ### CreateConnect
 
 ```lua linkTypes
-CreateConnect(uri: string, port: integer): WinSocket
+SocketManager.CreateConnect(uri: string, port: integer): WinSocket
 ```
 
 Creates a non-blocking TCP socket and connects to it.

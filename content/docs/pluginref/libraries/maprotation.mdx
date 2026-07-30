@@ -23,7 +23,7 @@ Manages the server's map rotation, including adding, removing, and getting map e
 ### AddMap
 
 ```lua linkTypes
-AddMap(level: string, mode: string): void
+MapRotation.AddMap(level: string, mode: string): void
 ```
 
 Adds a map entry to the end of the rotation.
@@ -39,7 +39,7 @@ Raises an error if either `level` or `mode` is an empty string.
 ### Clear
 
 ```lua linkTypes
-Clear(level: string, mode: string): void
+MapRotation.Clear(level: string, mode: string): void
 ```
 
 Clears the entire rotation and resets it with a single required starting entry.
@@ -55,7 +55,7 @@ Raises an error if either `level` or `mode` is an empty string.
 ### GetNextMap
 
 ```lua linkTypes
-GetNextMap(): MapRotationEntry
+MapRotation.GetNextMap(): MapRotationEntry
 ```
 
 Returns the next map entry in the rotation without removing it.
@@ -69,7 +69,7 @@ Returns the next map entry in the rotation without removing it.
 ### RemoveNextMap
 
 ```lua linkTypes
-RemoveNextMap(): void
+MapRotation.RemoveNextMap(): void
 ```
 
 Removes the next map entry from the rotation.
@@ -77,7 +77,7 @@ Removes the next map entry from the rotation.
 ### GetCurrentEntryIndex
 
 ```lua linkTypes
-GetCurrentEntryIndex(): integer
+MapRotation.GetCurrentEntryIndex(): integer
 ```
 
 Returns the current index within the map rotation list.
@@ -91,7 +91,7 @@ Returns the current index within the map rotation list.
 ### GetList
 
 ```lua linkTypes
-GetList(): MapRotationEntry
+MapRotation.GetList(): MapRotationEntry
 ```
 
 Returns the full list of map rotation entries.

@@ -176,7 +176,7 @@ If player is actively spawned as a character or vehicle.
 ### SetTeam
 
 ```lua linkTypes
-SetTeam(team: integer): void
+Player:SetTeam(team: integer): void
 ```
 
 Sets the player's team.
@@ -190,7 +190,7 @@ Sets the player's team.
 ### SetWeapon
 
 ```lua linkTypes
-SetWeapon(weaponName: string): void
+Player:SetWeapon(weaponName: string): void
 ```
 
 Sets the player's primary weapon by asset name.
@@ -205,7 +205,7 @@ Does nothing if the player has no soldier extent or the asset cannot be found.
 ### GetWeapon
 
 ```lua linkTypes
-GetWeapon(): DataContainer
+Player:GetWeapon(): DataContainer
 ```
 
 Returns the player's currently equipped primary weapon as a DataContainer asset.
@@ -220,7 +220,7 @@ Returns nothing if the player has no soldier extent or no weapon assigned.
 ### SetScore
 
 ```lua linkTypes
-SetScore(amount: integer): void
+Player:SetScore(amount: integer): void
 ```
 
 Sets the player's score to an exact amount.
@@ -234,7 +234,7 @@ Sets the player's score to an exact amount.
 ### SetKills
 
 ```lua linkTypes
-SetKills(amount: integer): void
+Player:SetKills(amount: integer): void
 ```
 
 Sets the player's kill count to an exact amount.
@@ -248,7 +248,7 @@ Sets the player's kill count to an exact amount.
 ### SetAssists
 
 ```lua linkTypes
-SetAssists(amount: integer): void
+Player:SetAssists(amount: integer): void
 ```
 
 Sets the player's assist count to an exact amount.
@@ -262,7 +262,7 @@ Sets the player's assist count to an exact amount.
 ### SetDeaths
 
 ```lua linkTypes
-SetDeaths(amount: integer): void
+Player:SetDeaths(amount: integer): void
 ```
 
 Sets the player's death count to an exact amount.
@@ -276,7 +276,7 @@ Sets the player's death count to an exact amount.
 ### SetBattlepoints
 
 ```lua linkTypes
-SetBattlepoints(amount: integer): void
+Player:SetBattlepoints(amount: integer): void
 ```
 
 Sets player's battlepoints.
@@ -290,7 +290,7 @@ Sets player's battlepoints.
 ### GiveBattlepoints
 
 ```lua linkTypes
-GiveBattlepoints(amount: integer): void
+Player:GiveBattlepoints(amount: integer): void
 ```
 
 Give player battlepoints
@@ -304,7 +304,7 @@ Give player battlepoints
 ### SetCustomizationAsset
 
 ```lua linkTypes
-SetCustomizationAsset(assetName: string): void
+Player:SetCustomizationAsset(assetName: string): void
 ```
 
 **[EXPERIMENTAL]** Sets the player's customization asset by resource name.
@@ -319,7 +319,7 @@ Does nothing if the asset cannot be found.
 ### SetUnlock
 
 ```lua linkTypes
-SetUnlock(assetGuid: string, grant: boolean): void
+Player:SetUnlock(assetGuid: string, grant: boolean): void
 ```
 
 Grants or revokes a specific unlock on the player by GUID string.
@@ -335,7 +335,7 @@ Does nothing if the GUID string or boolean argument is missing.
 ### Kick
 
 ```lua linkTypes
-Kick(reason: string): void
+Player:Kick(reason: string): void
 ```
 
 Kick server player from the server.
@@ -349,7 +349,7 @@ Kick server player from the server.
 ### SetInvisible
 
 ```lua linkTypes
-SetInvisible(invisible: boolean): void
+Player:SetInvisible(invisible: boolean): void
 ```
 
 Sets the player's character entity visibility.
@@ -364,7 +364,7 @@ Does nothing if the player has no character entity.
 ### SetHealth
 
 ```lua linkTypes
-SetHealth(amount: integer): void
+Player:SetHealth(amount: integer): void
 ```
 
 Sets the player's current health value.
@@ -379,7 +379,7 @@ Does nothing if the player has no character entity or health component.
 ### SetMaxHealth
 
 ```lua linkTypes
-SetMaxHealth(amount: integer): void
+Player:SetMaxHealth(amount: integer): void
 ```
 
 Sets the player's maximum health value.
@@ -395,7 +395,7 @@ Does nothing if the player has no character entity or the health component is of
 ### SetAbility
 
 ```lua linkTypes
-SetAbility(abilityId: integer): void
+Player:SetAbility(abilityId: integer): void
 ```
 
 Sets the player's character (notably not vehicle) active ability by ability ID.
@@ -410,7 +410,7 @@ Does nothing if the ability asset cannot be loaded for the given ID.
 ### ForceSendChatMessage
 
 ```lua linkTypes
-ForceSendChatMessage(channel: integer, message: string): void
+Player:ForceSendChatMessage(channel: integer, message: string): void
 ```
 
 Forces the player to send a chat message on a specified channel.
@@ -425,7 +425,7 @@ Forces the player to send a chat message on a specified channel.
 ### SendChatMessage
 
 ```lua linkTypes
-SendChatMessage(message: string): void
+Player:SendChatMessage(message: string): void
 ```
 
 Sends chat message to the player.
@@ -439,7 +439,7 @@ Sends chat message to the player.
 ### SetInputEnabled
 
 ```lua linkTypes
-SetInputEnabled(actionId: integer, enabled: boolean): void
+Player:SetInputEnabled(actionId: integer, enabled: boolean): void
 ```
 
 Enables or disables a specific input action for the player.
@@ -454,7 +454,7 @@ Enables or disables a specific input action for the player.
 ### SendSyncedSettings
 
 ```lua linkTypes
-SendSyncedSettings(): void
+Player:SendSyncedSettings(): void
 ```
 
 Resends synced game settings to the player's connection.
@@ -463,7 +463,7 @@ Useful after modifying server-side settings that need to be re-synced to the cli
 ### SetImmortal
 
 ```lua linkTypes
-SetImmortal(isImmortal: boolean): void
+Player:SetImmortal(isImmortal: boolean): void
 ```
 
 Set if the player's character (notably not vehicle) is damageable.
@@ -477,7 +477,7 @@ Set if the player's character (notably not vehicle) is damageable.
 ### SetFakeImmortal
 
 ```lua linkTypes
-SetFakeImmortal(isFakeImmortal: boolean): void
+Player:SetFakeImmortal(isFakeImmortal: boolean): void
 ```
 
 Set if the player's character (notably not vehicle) is fake damageable.
@@ -491,7 +491,7 @@ Set if the player's character (notably not vehicle) is fake damageable.
 ### SetExplosionDamageModifier
 
 ```lua linkTypes
-SetExplosionDamageModifier(modifier: number): void
+Player:SetExplosionDamageModifier(modifier: number): void
 ```
 
 Set how much the player's character (notably not vehicle) takes explosion damage
@@ -505,7 +505,7 @@ Set how much the player's character (notably not vehicle) takes explosion damage
 ### SetMoveSpeedMultiplier
 
 ```lua linkTypes
-SetMoveSpeedMultiplier(modifier: number): void
+Player:SetMoveSpeedMultiplier(modifier: number): void
 ```
 
 Set how fast the player's character (notably not vehicle) is.
@@ -519,7 +519,7 @@ Set how fast the player's character (notably not vehicle) is.
 ### SetCooldownModifier
 
 ```lua linkTypes
-SetCooldownModifier(modifier: number): void
+Player:SetCooldownModifier(modifier: number): void
 ```
 
 Sets the player's character (notably not vehicle) total cooldown timer is. Higher values is slower, lower values is faster.

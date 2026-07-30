@@ -25,7 +25,7 @@ The socket is automatically closed when garbage collected.
 ### Accept
 
 ```lua linkTypes
-Accept(): WinSocket
+WinSocket:Accept(): WinSocket
 ```
 
 Accepts an incoming client connection on a listening socket.
@@ -41,7 +41,7 @@ Raises an error if the accept call fails for any other reason.
 ### Recv
 
 ```lua linkTypes
-Recv(length: number): string
+WinSocket:Recv(length: number): string
 ```
 
 Receives data from the socket up to `length` bytes.
@@ -63,7 +63,7 @@ Raises an error if the recv call fails.
 ### Send
 
 ```lua linkTypes
-Send(data: string): number
+WinSocket:Send(data: string): number
 ```
 
 Sends a string of data over the socket.
@@ -84,7 +84,7 @@ Raises an error if the send call fails.
 ### PollConnectionStatus
 
 ```lua linkTypes
-PollConnectionStatus(): integer
+WinSocket:PollConnectionStatus(): integer
 ```
 
 Specifically for outgoing request sockets. Returns 0 if pending, 1 if successfully connected
@@ -99,7 +99,7 @@ Specifically for outgoing request sockets. Returns 0 if pending, 1 if successful
 ### IsOutgoingConnectionUsable
 
 ```lua linkTypes
-IsOutgoingConnectionUsable(): boolean
+WinSocket:IsOutgoingConnectionUsable(): boolean
 ```
 
 Specifically for outgoing request sockets. Returns true if specifically after PollConnectionStatus()
@@ -114,7 +114,7 @@ returned 1 and therefore had no connection errors.
 ### Close
 
 ```lua linkTypes
-Close(): void
+WinSocket:Close(): void
 ```
 
 Closes the socket connection and releases the handle.
@@ -122,7 +122,7 @@ Closes the socket connection and releases the handle.
 ### Shutdown
 
 ```lua linkTypes
-Shutdown(): void
+WinSocket:Shutdown(): void
 ```
 
 Disables sends or receives on a socket. `Recv()` is one of the functionalities that will be disabled if this is used.
@@ -130,7 +130,7 @@ Disables sends or receives on a socket. `Recv()` is one of the functionalities t
 ### ShutdownSend
 
 ```lua linkTypes
-ShutdownSend(): void
+WinSocket:ShutdownSend(): void
 ```
 
 Disables sends on a socket. `Recv()` will not be disabled and will send any lingering data.

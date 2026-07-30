@@ -19,7 +19,7 @@ EventManager global table.
 ### Listen
 
 ```lua linkTypes
-Listen(event: string, callback: function): void
+EventManager.Listen(event: string, callback: function): void
 ```
 
 Subscribes a listener to an event.
@@ -34,7 +34,7 @@ Subscribes a listener to an event.
 ### Listen
 
 ```lua linkTypes
-Listen(event: string, inst: any, callback: function): void
+EventManager.Listen(event: string, inst: any, callback: function): void
 ```
 
 Subscribes a listener to an event.
@@ -50,7 +50,7 @@ Subscribes a listener to an event.
 ### SetCancelled
 
 ```lua linkTypes
-SetCancelled(isCancelled: boolean): void
+EventManager.SetCancelled(isCancelled: boolean): void
 ```
 
 Set current running event cancellation to be queued.
