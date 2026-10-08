@@ -1,0 +1,26 @@
+---
+title: ChatFilter:Filter
+---
+
+```lua linkTypes
+ChatFilter:Filter(sender: Player, message: string, filteredMessage: string)
+```
+
+Event ran every time a message is filtered.
+
+
+## Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| **sender** | [Player](/g/pluginref/types/player) |  |
+| **message** | string |  |
+| **filteredMessage** | string |  |
+
+## Example
+
+```lua
+EventManager.Listen("ChatFilter:Filter", function(sender, message, filteredMessage)
+    -- Do stuff here.
+end)
+```

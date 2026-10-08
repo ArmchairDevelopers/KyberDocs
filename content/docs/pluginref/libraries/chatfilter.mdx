@@ -1,0 +1,147 @@
+---
+title: ChatFilter
+---
+
+## Summary
+
+ChatFilter global table.
+
+### Functions
+
+| Method | Returns |
+| ------ | ------- |
+| **[Clear](#clear)**() | void |
+| **[ClearBlockedPhrases](#clearblockedphrases)**() | void |
+| **[ClearBlockedRegex](#clearblockedregex)**() | void |
+| **[Enable](#enable)**() | void |
+| **[Disable](#disable)**() | void |
+| **[IsEnabled](#isenabled)**() | boolean |
+| **[AddBlockedPhrase](#addblockedphrase)**(phrase: string) | boolean |
+| **[AddBlockedRegex](#addblockedregex)**(phrase: string) | boolean |
+| **[SetFilterCharacter](#setfiltercharacter)**(char: string) | void |
+| **[GetFilterCharacter](#getfiltercharacter)**() | string |
+
+## Functions
+
+### Clear
+
+```lua linkTypes
+ChatFilter.Clear(): void
+```
+
+Clears all blocked phrases & regex.
+
+### ClearBlockedPhrases
+
+```lua linkTypes
+ChatFilter.ClearBlockedPhrases(): void
+```
+
+Clears all blocked phrases.
+
+### ClearBlockedRegex
+
+```lua linkTypes
+ChatFilter.ClearBlockedRegex(): void
+```
+
+Clears all blocked regex.
+
+### Enable
+
+```lua linkTypes
+ChatFilter.Enable(): void
+```
+
+Enable chat filter filtering messages. Note: Even when disabled, you can still access these table functions.
+
+### Disable
+
+```lua linkTypes
+ChatFilter.Disable(): void
+```
+
+Disable chat filter filtering messages. Note: Even when disabled, you can still access these table functions.
+
+### IsEnabled
+
+```lua linkTypes
+ChatFilter.IsEnabled(): boolean
+```
+
+Returns if the chat filter is enabled.
+
+#### Returns
+
+| Type | Description |
+| ---- | ----------- |
+| **boolean** |  |
+
+### AddBlockedPhrase
+
+```lua linkTypes
+ChatFilter.AddBlockedPhrase(phrase: string): boolean
+```
+
+Add blocked phrase to chat filter. Filtering of this type is case insensitive. Returns whether the phrase was added to the list or already existed (false)
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| **phrase** | string | The phrase you want to add |
+
+#### Returns
+
+| Type | Description |
+| ---- | ----------- |
+| **boolean** |  |
+
+### AddBlockedRegex
+
+```lua linkTypes
+ChatFilter.AddBlockedRegex(phrase: string): boolean
+```
+
+Add blocked regex to chat filter. Returns whether the regex was added to the list or already existed (false)
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| **phrase** | string | The phrase you want to add |
+
+#### Returns
+
+| Type | Description |
+| ---- | ----------- |
+| **boolean** |  |
+
+### SetFilterCharacter
+
+```lua linkTypes
+ChatFilter.SetFilterCharacter(char: string): void
+```
+
+Sets the chat filter's replacement character. For example, if set to '#', "blah badword" -> "blah #######"
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| **char** | string | The character you want to set |
+
+### GetFilterCharacter
+
+```lua linkTypes
+ChatFilter.GetFilterCharacter(): string
+```
+
+Gets the chat filter's replacement character.
+
+#### Returns
+
+| Type | Description |
+| ---- | ----------- |
+| **string** | character |
+

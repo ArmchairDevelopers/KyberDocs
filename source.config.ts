@@ -4,6 +4,8 @@ import {
   frontmatterSchema,
   metaSchema,
 } from 'fumadocs-mdx/config';
+import {rehypeCodeDefaultOptions} from "fumadocs-core/mdx-plugins";
+import {transformerTypeLinks} from "@/lib/type-links-helper";
 
 export const docs = defineDocs({
   dir: 'content/docs',
@@ -32,7 +34,16 @@ export const help = defineDocs({
 });
 
 export default defineConfig({
-  mdxOptions: {
-
-  },
+    mdxOptions: {
+        rehypeCodeOptions: {
+            themes: {
+                dark: 'github-dark',
+            },
+            langs: ['lua'],
+            transformers: [
+                ...(rehypeCodeDefaultOptions.transformers ?? []),
+                transformerTypeLinks(),
+            ],
+        },
+    },
 });

@@ -1,0 +1,24 @@
+---
+title: ServerPlayer:Disconnect
+---
+
+```lua linkTypes
+ServerPlayer:Disconnect(disconnectedPlayer: Player)
+```
+
+Ran when a player leaves the server.
+
+
+## Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| **disconnectedPlayer** | [Player](/g/pluginref/types/player) |  |
+
+## Example
+
+```lua
+EventManager.Listen("ServerPlayer:Disconnect", function(disconnectedPlayer)
+    -- Do stuff here.
+end)
+```

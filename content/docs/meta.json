@@ -3,6 +3,8 @@
     "---Introduction---",
     "index",
     "---Hosting---",
-    "hosting/dedicated-servers"
+    "hosting/dedicated-servers",
+    "---Plugin API ---",
+    "pluginref/"
   ]
 }

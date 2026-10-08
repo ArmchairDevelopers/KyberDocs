@@ -1,0 +1,24 @@
+---
+title: ServerPlayer:Spawned
+---
+
+```lua linkTypes
+ServerPlayer:Spawned(player: Player)
+```
+
+Ran when a player spawns. What class they spawned as does not matter.
+
+
+## Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| **player** | [Player](/g/pluginref/types/player) |  |
+
+## Example
+
+```lua
+EventManager.Listen("ServerPlayer:Spawned", function(player)
+    -- Do stuff here.
+end)
+```

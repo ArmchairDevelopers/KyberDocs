@@ -1,0 +1,24 @@
+---
+title: ServerPlayer:Joined
+---
+
+```lua linkTypes
+ServerPlayer:Joined(joiningPlayer: Player)
+```
+
+Ran when a player joins the server.
+
+
+## Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| **joiningPlayer** | [Player](/g/pluginref/types/player) |  |
+
+## Example
+
+```lua
+EventManager.Listen("ServerPlayer:Joined", function(joiningPlayer)
+    -- Do stuff here.
+end)
+```

@@ -1,0 +1,26 @@
+---
+title: EntityFactory:Create:[dynamic]
+---
+
+```lua linkTypes
+EntityFactory:Create:[dynamic](entityData: DataContainer)
+```
+
+Event ran meant to be ran when an entity of a certain type is created.
+[dynamic] is the EntityData type name of the entity, for example: `EntityFactory:Create:SpatialEntityData` for SpatialEntitys
+Note: Experimental, may not be ran for every type
+
+
+## Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| **entityData** | [DataContainer](/g/pluginref/types/datacontainer) |  |
+
+## Example
+
+```lua
+EventManager.Listen("EntityFactory:Create:[dynamic]", function(entityData)
+    -- Do stuff here.
+end)
+```

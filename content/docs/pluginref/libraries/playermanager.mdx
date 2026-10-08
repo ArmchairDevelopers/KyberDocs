@@ -1,0 +1,72 @@
+---
+title: PlayerManager
+---
+
+## Summary
+
+PlayerManager global table.
+
+### Functions
+
+| Method | Returns |
+| ------ | ------- |
+| **[GetPlayers](#getplayers)**() | [Player](/g/pluginref/types/player)[] |
+| **[GetPlayer](#getplayer)**(playerName: string) | [Player](/g/pluginref/types/player) |
+| **[CreatePlayer](#createplayer)**(name: string) | [Player](/g/pluginref/types/player) |
+
+## Functions
+
+### GetPlayers
+
+```lua linkTypes
+PlayerManager.GetPlayers(): Player
+```
+
+Gets all players online (both real and AI).
+
+#### Returns
+
+| Type | Description |
+| ---- | ----------- |
+| **[Player](/g/pluginref/types/player)[]** |  |
+
+### GetPlayer
+
+```lua linkTypes
+PlayerManager.GetPlayer(playerName: string): Player
+```
+
+Gets the player requested.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| **playerName** | string | Requested player username |
+
+#### Returns
+
+| Type | Description |
+| ---- | ----------- |
+| **[Player](/g/pluginref/types/player)** |  |
+
+### CreatePlayer
+
+```lua linkTypes
+PlayerManager.CreatePlayer(name: string): Player
+```
+
+Creates a new bot player with the given name.
+
+#### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| **name** | string | The display name for the new bot player. |
+
+#### Returns
+
+| Type | Description |
+| ---- | ----------- |
+| **[Player](/g/pluginref/types/player)** | player The newly created Player instance. |
+

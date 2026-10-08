@@ -1,0 +1,25 @@
+---
+title: ServerPlayer:SendMessage
+---
+
+```lua linkTypes
+ServerPlayer:SendMessage(player: Player, message: string)
+```
+
+Ran every time a player sends a chat message. Cancellable.
+
+
+## Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| **player** | [Player](/g/pluginref/types/player) |  |
+| **message** | string |  |
+
+## Example
+
+```lua
+EventManager.Listen("ServerPlayer:SendMessage", function(player, message)
+    -- Do stuff here.
+end)
+```
